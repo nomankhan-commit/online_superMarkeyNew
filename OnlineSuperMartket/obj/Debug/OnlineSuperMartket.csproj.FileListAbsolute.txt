@@ -1,0 +1,328 @@
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\ApplicationInsights.config
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\csc.exe
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Collections.Immutable.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Reflection.Metadata.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\vbc.exe
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe.config
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll.config
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.pdb
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Agent.Intercept.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Web.Infrastructure.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Owin.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\WebGrease.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.pdb
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.dll
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.pdb
+E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.csprojResolveAssemblyReference.cache
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\ApplicationInsights.config
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\csc.exe
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Collections.Immutable.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Reflection.Metadata.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\vbc.exe
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe.config
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll.config
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.pdb
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Web.Infrastructure.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Owin.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\WebGrease.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.pdb
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.csprojResolveAssemblyReference.cache
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.dll
+C:\Noman Project shopping store\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.pdb
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\ApplicationInsights.config
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\csc.exe
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Collections.Immutable.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Reflection.Metadata.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\vbc.exe
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe.config
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll.config
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.pdb
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Agent.Intercept.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Web.Infrastructure.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Owin.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\WebGrease.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.pdb
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.csprojResolveAssemblyReference.cache
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.dll
+E:\new onlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.pdb
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\ApplicationInsights.config
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\csc.exe
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Collections.Immutable.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\System.Reflection.Metadata.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\vbc.exe
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\roslyn\VBCSCompiler.exe.config
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll.config
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\OnlineSuperMartket.pdb
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Agent.Intercept.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Web.Infrastructure.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Owin.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\WebGrease.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.DependencyCollector.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.Web.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AI.WindowsServer.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.ApplicationInsights.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Helpers.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Mvc.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Optimization.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.Razor.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Deployment.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\System.Web.WebPages.Razor.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Antlr3.Runtime.pdb
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Newtonsoft.Json.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\EntityFramework.SqlServer.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Core.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Facebook.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Cookies.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.OAuth.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Google.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.Twitter.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.csprojResolveAssemblyReference.cache
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.dll
+E:\newonlinesupermart\OnlineSuperMartket\OnlineSuperMartket\OnlineSuperMartket\obj\Debug\OnlineSuperMartket.pdb
