@@ -111,7 +111,7 @@ namespace OnlineSuperMartket.Controllers
                 int userID = Convert.ToInt32(Session["UserID"]);
                 ViewBag.brands = db.Brands.Where(x => x.is_active == true).ToList();
                 ViewBag.category = db.Categories.Where(x => x.is_active == true).ToList();
-                ViewBag.products = db.Products.Where(x => x.is_active == true).ToList();
+                ViewBag.products = db.Products.Where(x => x.is_active == true && x.is_deleted == false).ToList();
                 ViewBag.sp_products = db.sp_Products(userID).ToList();
                 ViewBag.Vendor = db.users.Where(x => x.role_ID == 1).ToList();
 
@@ -133,7 +133,7 @@ namespace OnlineSuperMartket.Controllers
                 int userID = Convert.ToInt32(Session["UserID"]);
                 ViewBag.brands = db.Brands.Where(x => x.is_active == true).ToList();
                 ViewBag.category = db.Categories.Where(x => x.is_active == true).ToList();
-                ViewBag.products = db.Products.Where(x => x.is_active == true).ToList();
+                ViewBag.products = db.Products.Where(x => x.is_active == true && x.is_deleted == false).ToList();
                 ViewBag.sp_products = db.sp_ActiveProductsAgainstVendorID(true, userID).ToList();
                 ViewBag.Vendor = db.users.Where(x => x.role_ID == 1).ToList();
 
@@ -182,7 +182,7 @@ namespace OnlineSuperMartket.Controllers
                 int userID = Convert.ToInt32(Session["UserID"]);
                 ViewBag.brands = db.Brands.Where(x => x.is_active == true).ToList();
                 ViewBag.category = db.Categories.Where(x => x.is_active == true).ToList();
-                ViewBag.products = db.Products.Where(x => x.is_active == true).ToList();
+                ViewBag.products = db.Products.Where(x => x.is_active == true && x.is_deleted == false).ToList();
                 ViewBag.sp_products = db.sp_ActiveProductsAgainstVendorID(false, userID).ToList();
                 ViewBag.Vendor = db.users.Where(x => x.role_ID == 1).ToList();
 
@@ -203,7 +203,7 @@ namespace OnlineSuperMartket.Controllers
                 int userRole = Convert.ToInt32(Session["UserID"]);
                 ViewBag.brands = db.Brands.Where(x => x.is_active == true).ToList();
                 ViewBag.category = db.Categories.Where(x => x.is_active == true).ToList();
-                ViewBag.products = db.Products.Where(x => x.is_active == true).ToList();
+                ViewBag.products = db.Products.Where(x => x.is_active == true && x.is_deleted == false).ToList();
                 ViewBag.sp_products = db.sp_CategryVisProductsForVendor(userID, category_ID).ToList();
                 var caegroname = db.Categories.Where(x => x.category_ID == category_ID).Select(x => x.category_name).ToList();
                 ViewBag.CategoryName = caegroname[0].ToString();

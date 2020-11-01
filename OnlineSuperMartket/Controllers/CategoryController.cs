@@ -22,7 +22,7 @@ namespace OnlineSuperMartket.Controllers
 
                 var a = db.Categories.Find(id);
 
-                var p = db.Products.Where(x => x.category_ID == id && x.is_active == true).ToList();
+                var p = db.Products.Where(x => x.category_ID == id && x.is_active == true && x.is_deleted == false).ToList();
                 ViewBag.prodts = p;
                 ViewBag.pageName = a.category_name;
                 //ViewBag.link_ = "/services/services";
@@ -44,7 +44,7 @@ namespace OnlineSuperMartket.Controllers
             //var a = db.Categories.Find(id);
 
             //var p = db.Products.Where(x => x.category_ID == id).ToList();
-            var p = db.Products.Where(x => x.is_active == true).ToList();
+            var p = db.Products.Where(x => x.is_active == true && x.is_deleted == false).ToList();
             ViewBag.prodts = p;
             //ViewBag.pageName = a.category_name;
             ViewBag.pageName = "Shop Now!";

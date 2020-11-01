@@ -69,7 +69,12 @@
                        
                         <td>@item.retail_price</td>
 
-                        <td><input type="number" id="@item.Product_ID"  placeholder="1 Qty selected" class="quentityInput @item.AddToCart_id" /></td>
+                        <td>
+                        <input type="number" id="@item.Product_ID"  placeholder="1 Qty selected" class="quentityInput @item.AddToCart_id" />
+                            <input type="hidden" id="origionalqty_@item.Product_ID" value="@item.stock" />
+                            <input type="hidden" id="runtimeqty_@item.Product_ID" value="0" />
+                        
+                        </td>
                       
                        
                         <td colspan=4><img src="~/AddProducts/Image/@name" alt="~/AddProducts/Image/@name" border=3 height=100 width=100></td>

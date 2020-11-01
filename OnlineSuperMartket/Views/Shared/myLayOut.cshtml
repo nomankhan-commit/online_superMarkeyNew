@@ -969,16 +969,15 @@ $(document).ready(function(){
             
 	        //$("body").on("keyup", ".quentityInput", function () {
 
-	        //    var amount = $(this).closest('tr').children('td:eq(3)').text();
-            //    var quentity = $(this).closest('tr').children('td:eq(4)').find("input").val();
-            //    var inputValue = $(this).val();
-            //    var hiddenamoutd11 = $("#Bakcuphiddemamount").val();
-            //    if (inputValue == null || inputValue == "" || inputValue == 0) {
-            //        var a = " RS --- " + hiddenamoutd11 + "PKR";
-            //        var amoutn1 = $("#amount").html(a);
-            //        $("#hiddemamount").val(hiddenamoutd11);
-            //    }
+	        //    debugger;
+
+            //    var quentity = $(this).closest('tr').children('td:eq(5)').find("input").val();
                
+            //    var qqqt = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val();
+
+            //    var pppp = parseInt(qqqt) - parseInt(quentity);
+
+            //    $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val(pppp)
             
             //})
 
@@ -1048,51 +1047,66 @@ $(document).ready(function(){
 
 
 	        $("body").on("click", ".addQuentity", function () {
-
+                debugger
 	            var amount = $(this).closest('tr').children('td:eq(4)').text();
 	            var quentity = $(this).closest('tr').children('td:eq(5)').find("input").val();
+	            var origionaqty = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").val();
+	            var runtimequentity = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val()
+	            var thi = this;
+
+	            var adqty = parseInt(quentity) + parseInt(runtimequentity);
+
+	            if (adqty > origionaqty) {
+	                alert("reduce some Quentity.");
+
+	            } else {
+	                debugger;
+	                data = {};
+	                data.id = $(this).attr("id");
+	                data.qty = quentity;
+
+	                $.ajax({
+	                    url: `/my/checkQty`,
+	                    dataType: 'json',
+	                    type: 'POST',
+	                    data: data,
+
+	                    success: function (response) {
+	                        debugger;
+
+	                        if (response[1] == "1") {
+	                            if (quentity != "" && quentity != 0) {
 
 
-	            debugger;
-	            data = {};
-	            data.id = $(this).attr("id");
-	            data.qty = quentity;
+	                                var amoutn1 = $("#hiddemamount").val();
 
-	            $.ajax({
-	                url: `/my/checkQty`,
-	                dataType: 'json',
-	                type: 'POST',
-	                data: data,
+	                                var amount2 = parseInt(amount) * parseInt(quentity);
+	                                var amoutn3 = parseInt(amoutn1) + parseInt(amount2) //- parseInt(amount);
 
-	                success: function (response) {
-	                    debugger;
+	                                var a = " RS --- " + amoutn3 + "PKR";
 
-	                    if (response[1] == "1") {
-	                        if (quentity != "" && quentity != 0) {
+	                                $("#hiddemamount").val(amoutn3);
+	                                var amoutn1 = $("#amount").html(a);
+	                                console.log(adqty);
+	                                $(thi).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val(adqty);
 
-	                            
-	                            var amoutn1 = $("#hiddemamount").val();
-	                          
-	                            var amount2 = parseInt(amount) * parseInt(quentity);
-	                            var amoutn3 = parseInt(amoutn1) + parseInt(amount2) //- parseInt(amount);
 
-	                            var a = " RS --- " + amoutn3 + "PKR";
+	                            }
+	                        } else {
 
-	                            $("#hiddemamount").val(amoutn3);
-	                            var amoutn1 = $("#amount").html(a);
+	                            alert(response[0]);
 	                        }
-	                    } else {
 
-	                        alert(response[0]);
+	                    },
+	                    error: function (error) {
+
+	                        alert(`${error}\n Error occurd! check your console for Error.`);
+	                        console.log(error)
 	                    }
-	                   
-	                },
-	                error: function (error) {
+	                });
+	            }
 
-	                    alert(`${error}\n Error occurd! check your console for Error.`);
-	                    console.log(error)
-	                }
-	            });
+	           
 
 
 
