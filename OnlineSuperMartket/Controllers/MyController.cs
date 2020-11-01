@@ -24,7 +24,7 @@ namespace OnlineSuperMartket.Controllers
         // GET: My
         public ActionResult home()
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/Accounts/login_signup");
             }
@@ -52,32 +52,48 @@ namespace OnlineSuperMartket.Controllers
         }
 
 
-        public JsonResult checkQty(int ? id, int ? qty) {
-
-            //var qtyDb = 1;//int.Parse(db.Products.Where(x=>x.Product_ID == id).Select(x => x.stock).ToString());
-            var qtyDb1 = db.Products.Where(x => x.Product_ID == id).ToList();
-            var qtyDb = int.Parse(qtyDb1[0].stock.ToString()); 
-            if (qtyDb >= qty)
+        public ActionResult checkQty(int ? id, int ? qty) {
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
-                var newQty = qtyDb - qty;
-                //db.updatStock(id,newQty);
-                string[] aa = { "available", "1" };
-                return Json(aa, JsonRequestBehavior.AllowGet);
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
             }
-            else if (qtyDb == 0) {
-                string[] aa = { "out of stock", "2" };
-                return Json(aa, JsonRequestBehavior.AllowGet);
+            else
+            {
+                //var qtyDb = 1;//int.Parse(db.Products.Where(x=>x.Product_ID == id).Select(x => x.stock).ToString());
+                var qtyDb1 = db.Products.Where(x => x.Product_ID == id).ToList();
+                var qtyDb = int.Parse(qtyDb1[0].stock.ToString());
+                if (qtyDb >= qty)
+                {
+                    var newQty = qtyDb - qty;
+                    //db.updatStock(id,newQty);
+                    string[] aa = { "available", "1" };
+                    return Json(aa, JsonRequestBehavior.AllowGet);
+                }
+                else if (qtyDb == 0)
+                {
+                    string[] aa = { "out of stock", "2" };
+                    return Json(aa, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+
+                    string[] aa = { qtyDb + " stock is available of this product", "3" };
+
+                    return Json(aa, JsonRequestBehavior.AllowGet);
+
+                }
+
             }
-            else {
-
-                string [] aa = { qtyDb + " stock is available of this product" , "3" };
-
-                return Json( aa, JsonRequestBehavior.AllowGet);
-
-            }
 
 
-           
+
 
 
         }
@@ -86,7 +102,7 @@ namespace OnlineSuperMartket.Controllers
         public ActionResult All_Data()       
             {
 
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/vendor/signup");
             }
@@ -108,7 +124,7 @@ namespace OnlineSuperMartket.Controllers
         }
 
         public ActionResult ActiveProducts() {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/vendor/signup");
             }
@@ -129,7 +145,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult deleteproduct(int ? id)
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/Accounts/login_signup");
             }
@@ -157,7 +173,7 @@ namespace OnlineSuperMartket.Controllers
         //
 
         public ActionResult InActiveProducts() {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/vendor/signup");
             }
@@ -177,7 +193,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult CategoryVisProductsVendor(int category_ID) {
 
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/vendor/signup");
             }
@@ -212,62 +228,80 @@ namespace OnlineSuperMartket.Controllers
 
 
         public ActionResult updateProduct(Product form_data) {
-        
-            string computer_name = Path.GetFileNameWithoutExtension(form_data.ImageFile.FileName);
-            string extension = Path.GetExtension(form_data.ImageFile.FileName);
-            var name1 = DateTime.Now.ToString("yymmssfff") + extension;
-           
-            var name2 = name1; //DateTime.Now.ToString("yymmssfff") + extension;
-            var fileSize = form_data.ImageFile.ContentLength;      //file size in kb.
-            string fileType = form_data.ImageFile.ContentType;
 
-            Stream a = form_data.ImageFile.InputStream;
-            System.Drawing.Image image = System.Drawing.Image.FromStream(a);
-            int height = image.Height;
-            int width = image.Width;
-
-            string folder = "Image";
-
-            string fileName = Path.Combine(Server.MapPath("~/AddProducts/"+folder), name1);
-            //var name3 = Path.Combine(Server.MapPath(folder), name2);
-            string isFolder_exist = Path.Combine(Server.MapPath(folder)); // fileName1 contain only folder name 
-                                                                          // ~/ uploadImage / Image / 191848515.jpg
-            bool isexist = Directory.Exists(isFolder_exist);
-            if (!isexist)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
-                Directory.CreateDirectory(isFolder_exist);
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else
+            {
+
+                string computer_name = Path.GetFileNameWithoutExtension(form_data.ImageFile.FileName);
+                string extension = Path.GetExtension(form_data.ImageFile.FileName);
+                var name1 = DateTime.Now.ToString("yymmssfff") + extension;
+
+                var name2 = name1; //DateTime.Now.ToString("yymmssfff") + extension;
+                var fileSize = form_data.ImageFile.ContentLength;      //file size in kb.
+                string fileType = form_data.ImageFile.ContentType;
+
+                Stream a = form_data.ImageFile.InputStream;
+                System.Drawing.Image image = System.Drawing.Image.FromStream(a);
+                int height = image.Height;
+                int width = image.Width;
+
+                string folder = "Image";
+
+                string fileName = Path.Combine(Server.MapPath("~/AddProducts/" + folder), name1);
+                //var name3 = Path.Combine(Server.MapPath(folder), name2);
+                string isFolder_exist = Path.Combine(Server.MapPath(folder)); // fileName1 contain only folder name 
+                                                                              // ~/ uploadImage / Image / 191848515.jpg
+                bool isexist = Directory.Exists(isFolder_exist);
+                if (!isexist)
+                {
+                    Directory.CreateDirectory(isFolder_exist);
+                }
+                form_data.is_deleted = false;
+                form_data.is_active = true;
+                form_data.create_at = DateTime.Now;
+                form_data.update_at = DateTime.Now;
+                form_data.imgPath = name2;
+
+
+
+                var aa = db.Products.Find(form_data.Product_ID);
+
+                db.sp_updateProduct(form_data.Product_ID,
+                    form_data.category_ID,
+                    form_data.brand_ID,
+                    form_data.Product_name,
+                    form_data.Product_disc,
+                    form_data.whole_sale_price,
+                    form_data.Product_code,
+                    form_data.retail_price,
+                    form_data.stock,
+                    form_data.imgPath,
+                    form_data.create_at,
+                    form_data.update_at,
+                    form_data.is_active
+                    );
+
+
+                string path = "E:\\online_superMarkey\\OnlineSuperMartket\\OnlineSuperMartket\\AddProducts\\Image\\" + name2;
+                form_data.ImageFile.SaveAs(fileName);
+                ModelState.Clear();
+
+                return RedirectPermanent("/My/All_Data");
             }
 
-            form_data.is_active = true;
-            form_data.create_at = DateTime.Now;
-            form_data.update_at = DateTime.Now;
-            form_data.imgPath = name2;
-            
-
-           
-            var aa =db.Products.Find(form_data.Product_ID);
-
-            db.sp_updateProduct(form_data.Product_ID,
-                form_data.category_ID,
-                form_data.brand_ID, 
-                form_data.Product_name,
-                form_data.Product_disc, 
-                form_data.whole_sale_price, 
-                form_data.Product_code, 
-                form_data.retail_price, 
-                form_data.stock,
-                form_data.imgPath, 
-                form_data.create_at, 
-                form_data.update_at,
-                form_data.is_active
-                );
 
 
-            string path = "E:\\online_superMarkey\\OnlineSuperMartket\\OnlineSuperMartket\\AddProducts\\Image\\" + name2;
-            form_data.ImageFile.SaveAs(fileName);
-            ModelState.Clear();
-
-            return RedirectPermanent("/My/All_Data");
 
         }
 
@@ -287,19 +321,33 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult update_brand(Brand form_data)
         {
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else
+            {
+                var db_result = db.Brands.Where(x => x.brand_ID == form_data.brand_ID).FirstOrDefault();
 
-            var db_result = db.Brands.Where(x => x.brand_ID == form_data.brand_ID).FirstOrDefault();
+                form_data.is_active = true;
+                form_data.update_at = DateTime.Now;
+                form_data.create_at = db_result.create_at;
 
-            form_data.is_active = true;
-            form_data.update_at = DateTime.Now;
-            form_data.create_at = db_result.create_at;
+                form_data.brand_code = 000;
+                db.update_brand(form_data.brand_ID, form_data.brand_name, form_data.update_at);
 
-            form_data.brand_code = 000;
-            db.update_brand(form_data.brand_ID,form_data.brand_name,form_data.update_at);
+                return RedirectPermanent("/controller/brandsCategory");
+                //controller/brandsCategory
+                //  return RedirectPermanent("/My/All_Data");
+            }
 
-            return RedirectPermanent("/controller/brandsCategory");
-            //controller/brandsCategory
-            //  return RedirectPermanent("/My/All_Data");
 
         }
 

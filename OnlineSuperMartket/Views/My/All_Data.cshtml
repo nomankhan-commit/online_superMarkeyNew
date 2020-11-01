@@ -1,4 +1,8 @@
-﻿
+﻿@if (string.IsNullOrEmpty(Session["UserID"] as string))
+{
+
+    Html.Action("home_", "My");
+}
 @{
     ViewBag.Title = "All_Data";
     Layout = "~/Views/Shared/myLayOut.cshtml";

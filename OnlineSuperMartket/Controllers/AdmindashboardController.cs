@@ -18,7 +18,7 @@ namespace OnlineSuperMartket.Controllers
         // GET: Admindashboard
         public ActionResult Index()
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -72,8 +72,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult VendorDshboard()
         {
-            
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/Accounts/login_signup");
             }

@@ -57,13 +57,14 @@ namespace OnlineSuperMartket.Controllers
                     db.users.Add(form_data);
                     db.SaveChanges();
 
-                    var db_result_ = db.users.Where(x => x.email == form_data.email).FirstOrDefault();
-                    Session["UserID"] = db_result_.userID.ToString();
-                    Session["FullName"] = db_result_.first_name.ToString() + " " + db_result_.last_name.ToString();
-                    Session["last_name"] = db_result_.last_name.ToString();
-                    Session["Role_ID"] = db_result_.role_ID.ToString();
-                    Session["userDetails"] = Convert.ToString(db_result_);
-                    status = true;
+                var db_result_ = db.users.Where(x => x.email == form_data.email).FirstOrDefault();
+                Session["UserID"] = db_result_.userID.ToString();
+                Session["FullName"] = db_result_.first_name.ToString() + " " + db_result_.last_name.ToString();
+                Session["last_name"] = db_result_.last_name.ToString();
+                Session["Role_ID"] = db_result_.role_ID.ToString();
+                Session["userDetails"] = Convert.ToString(db_result_);
+                Session["isActive"] = db_result_.is_active == true ? "true" : "false";
+                status = true;
                 
 
              
@@ -92,13 +93,14 @@ namespace OnlineSuperMartket.Controllers
             var rorid = "";
             var db_result = db.users.Where(x => x.email == form_data.email && x.password == form_data.password && x.is_active == true).FirstOrDefault();
 
-            if (db_result != null)
+            if (db_result != null && db_result.role_ID == 4)
             {
                 Session["UserID"] = db_result.userID.ToString();
                 Session["Email"] = db_result.email.ToString() ;
                 Session["FullName"] = db_result.first_name.ToString() + " " + db_result.last_name.ToString();
                 Session["last_name"] = db_result.last_name.ToString();
                 Session["Role_ID"] = db_result.role_ID.ToString();
+                Session["isActive"] =  db_result.is_active == true ? "true" : "false";
                 //Session["userDetails"] = Convert.ToString(db_result);
                 //if (db_result.role_ID.ToString()=="1")
                 //{
@@ -153,65 +155,109 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult logOut()
         {
-            var rolid  = Session["Role_ID"].ToString();
-            var method = "";
-            var controler = "";
-
-            if (rolid == "4")
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
-               method = "home_";
-                controler = "My";
-            }
-            else if (rolid == "1")
-            {
-                
-                method = "signup";
-                controler = "vendor";
-            }
-            else {
-                method = "Index";
-                controler = "AdminLogin";
-            }
-            
-            Session["UserID"] = null;
-            Session["FullName"] = null;
-            Session["last_name"] = null;
-            Session["Role_ID"] = null;
-            Session["userDetails"] = null;
+                return Redirect("~/My/home_");
 
-            Session.Clear();
-            Session.Abandon();
-            // return RedirectPermanent("/Accounts/login_signup");
-            //  return View();
-            //return Redirect("~/My/home_");
-            return Redirect("~/"+ controler + "/"+method);
+            }
+            else
+            {
+
+                var rolid = Session["Role_ID"].ToString();
+                var method = "";
+                var controler = "";
+
+                if (rolid == "4")
+                {
+                    method = "home_";
+                    controler = "My";
+                }
+                else if (rolid == "1")
+                {
+
+                    method = "signup";
+                    controler = "vendor";
+                }
+                else
+                {
+                    method = "Index";
+                    controler = "AdminLogin";
+                }
+
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+                Session["isActive"] = null;
+                Session.Clear();
+                Session.Abandon();
+                // return RedirectPermanent("/Accounts/login_signup");
+                //  return View();
+                //return Redirect("~/My/home_");
+                return Redirect("~/" + controler + "/" + method);
+            }
+
         }
 
 
 
 
-        public JsonResult addCategory(Category form_data) {
+        public ActionResult addCategory(Category form_data) {
 
-            var Category_name = form_data.category_name;
-            //string fruit = "Apple,Banana,Orange,Strawberry";
-            string[] split = Category_name.Split(',');
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
 
-            for (int i = 0; i < split.Length; i++)
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else if (Session["Role_ID"].ToString() == "1" || Session["Role_ID"].ToString() == "4")
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else
             {
 
-                form_data.create_at = DateTime.Now;
-                form_data.category_disc = "null";
-                form_data.is_active = true;
-                form_data.category_name = split[i];
-                db.Categories.Add(form_data);
-                db.SaveChanges();
-                status = true;
-                Thread.Sleep(250);
+
+                var Category_name = form_data.category_name;
+                //string fruit = "Apple,Banana,Orange,Strawberry";
+                string[] split = Category_name.Split(',');
+
+                for (int i = 0; i < split.Length; i++)
+                {
+
+                    form_data.create_at = DateTime.Now;
+                    form_data.category_disc = "null";
+                    form_data.is_active = true;
+                    form_data.category_name = split[i];
+                    db.Categories.Add(form_data);
+                    db.SaveChanges();
+                    status = true;
+                    Thread.Sleep(250);
+                }
+
+
+
+                return Json(status, JsonRequestBehavior.AllowGet);
+
             }
 
-          
-            
-            return Json(status, JsonRequestBehavior.AllowGet);
+
+
         }
         [HttpPost]
         public JsonResult addBrand(Brand form_data)

@@ -44,11 +44,14 @@ namespace OnlineSuperMartket.Controllers
                 db.SaveChanges();
 
                 var db_result_ = db.users.Where(x => x.email == formData.email).FirstOrDefault();
+                var isactive = db_result_.is_active == true ? "true" : "false";
                 Session["UserID"] = db_result_.userID.ToString();
                 Session["FullName"] = db_result_.first_name.ToString() + " " + db_result_.last_name.ToString();
                 Session["last_name"] = db_result_.last_name.ToString();
                 Session["Role_ID"] = db_result_.role_ID.ToString();
                 Session["userDetails"] = Convert.ToString(db_result_);
+                Session["isActive"] = isactive;
+
                 status = true;
                 //Emai(string subject, string reciever, string message);
                 //string emailBody = "<h2>Sellor Registeration Alert</h2></br><h5>Id</h5>"+ Session["UserID"].ToString() + "</br><h5>Email</h5>"+ db_result_ .email.ToString()+ ""; 
@@ -72,19 +75,41 @@ namespace OnlineSuperMartket.Controllers
             // return Json(new { status, isInternalUser}, JsonRequestBehavior.AllowGet);
             return Json(status, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult checkAvailability(string shopname) {
+            string[] response  ;
+            var db_result = db.users.Where(x => x.shopname == shopname).FirstOrDefault();
+
+            if (db_result != null)
+            {
+                response = new string[] {"shopname","present"} ;
+                return Json(response, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+            {
+                response = new string[] { "shopname", "not present" };
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+
+              
+
+        }
+
         public JsonResult Login_form(user form_data)
         {
             var Login_checker = "Fail";
             var rorid = "";
             var db_result = db.users.Where(x => x.email == form_data.email && x.password == form_data.password && x.is_active == true).FirstOrDefault();
 
-            if (db_result != null)
+            if (db_result != null && db_result.role_ID != 4)
             {
                 Session["UserID"] = db_result.userID.ToString();
                 Session["Email"] = db_result.email.ToString();
                 Session["FullName"] = db_result.first_name.ToString() + " " + db_result.last_name.ToString();
                 Session["last_name"] = db_result.last_name.ToString();
                 Session["Role_ID"] = db_result.role_ID.ToString();
+                Session["isActive"] = db_result.is_active == true ? "true" : "false";
                 //Session["userDetails"] = Convert.ToString(db_result);
                 //if (db_result.role_ID.ToString()=="1")
                 //{
@@ -169,7 +194,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult makeDispatch(int ? id) {
 
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/vendor/signup");
             }

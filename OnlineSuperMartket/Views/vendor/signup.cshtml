@@ -70,7 +70,39 @@
             $("#conformpassword").keyup(checkPasswordMatch);
             });
 
+            $("input[name=shopname]").focusout(function () {
+              debugger
+                var data1 = {};
+                data1.shopname = $(this).val();
 
+                $.ajax({
+                    url: `/vendor/checkAvailability`,
+                    dataType: 'json',
+                    type: 'post',
+                    data: data1,
+                    success: function (response) {
+                        //response
+                        if (response[0]=="shopname" && response[1] == "present") {
+
+                            alert("shop name already exist");
+                            $("#signup_submit_vendor").attr( "disabled", "disabled" );
+
+                        } else {
+
+                            $("#signup_submit_vendor").removeAttr("disabled");
+
+                        }
+
+                    },
+
+                    error: function (error) {
+                        console.log(error);
+                    }
+
+
+                })
+
+            });
 
             $('.toggle').click(function () {
                 debugger;

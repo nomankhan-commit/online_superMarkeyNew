@@ -23,8 +23,12 @@ namespace OnlineSuperMartket.Controllers
 
        [HttpPost]
         public RedirectResult addProducts(Product form_data) {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
+                return Redirect("~/Accounts/login_signup");
+            }
+            else if  (Session["Role_ID"].ToString() == "1009" || Session["Role_ID"].ToString() == "4")
+             {
                 return Redirect("~/Accounts/login_signup");
             }
             else
@@ -55,20 +59,20 @@ namespace OnlineSuperMartket.Controllers
                 {
                     Directory.CreateDirectory(isFolder_exist);
                 }
-
+                form_data.is_deleted = false;
                 form_data.is_active = true;
                 form_data.create_at = DateTime.Now;
                 form_data.imgPath = name2;
-                form_data.sellorID =  Convert.ToInt16(Session["UserID"]);
+                form_data.sellorID = Convert.ToInt16(Session["UserID"]);
                 form_data.sellorName = Session["Email"].ToString();
                 db.Products.Add(form_data);
                 db.SaveChanges();
                 string path = "E:\\online_superMarkey\\OnlineSuperMartket\\OnlineSuperMartket\\AddProducts\\Image\\" + name2;
                 form_data.ImageFile.SaveAs(fileName);
                 ModelState.Clear();
-                var productID = db.Products.ToList().Last() ;
+                var productID = db.Products.ToList().Last();
 
-                string emailBody = "new Product Uploaded (products id is "+productID.Product_ID.ToString()+") by vendor ( "+ Session["Email"].ToString()+" ). please review  it. http://localhost:31574/Accounts/login_signup '";
+                string emailBody = "new Product Uploaded (products id is " + productID.Product_ID.ToString() + ") by vendor ( " + Session["Email"].ToString() + " ). please review  it. http://localhost:31574/Accounts/login_signup '";
 
                 Emai("testing", "nhr146@gmail.com", emailBody);
                 // add // E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\AddProducts\Image\190149747.jpg

@@ -1,4 +1,8 @@
-﻿
+﻿@if (string.IsNullOrEmpty(Session["UserID"] as string))
+{
+
+    Html.Action("home_", "My");
+}
 @{
     ViewBag.Title = "All_Data";
     Layout = "~/Views/Shared/myLayOut.cshtml";
@@ -36,7 +40,8 @@
             <table  id="myTable">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">Cart_id</th>
+                        <th scope="col">Product Code</th>
                         <th scope="col">Product</th>
                         
                         <th scope="col">Dis</th>
@@ -55,6 +60,7 @@
                         a++;
                         var name = item.imgPath;
                     <tr>
+                        <td>@item.AddToCart_id</td>
                         <td>@item.Product_ID</td>
                         <td>@item.Product_name</td>
                       
@@ -63,7 +69,7 @@
                        
                         <td>@item.retail_price</td>
 
-                        <td><input type="text"  /></td>
+                        <td><input type="number" id="@item.Product_ID"  placeholder="1 Qty selected" class="quentityInput @item.AddToCart_id" /></td>
                       
                        
                         <td colspan=4><img src="~/AddProducts/Image/@name" alt="~/AddProducts/Image/@name" border=3 height=100 width=100></td>
@@ -120,6 +126,7 @@
         <label class="form-check-label">
             <h1 id="amount">RS --- @ViewBag.amount PKR</h1>
             <input type="hidden" value="@ViewBag.amount" id="hiddemamount" />
+            <input type="hidden" value="@ViewBag.amount" id="Bakcuphiddemamount" />
         </label>
       @if (ViewBag.amount > 0)
       {

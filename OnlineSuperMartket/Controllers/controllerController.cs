@@ -21,7 +21,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult vendorListActive()
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -41,7 +41,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult vendorListInActive()
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -77,7 +77,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult BlockVendor(int ? id)
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -97,9 +97,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult AllProducts()
         {
-
-
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -119,7 +117,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult AllProducts_()
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -139,7 +137,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult ActiveProducts() {
 
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -158,7 +156,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult InActiveProducts()
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -179,7 +177,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult MakeActiveProducts(int ? id)
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -202,7 +200,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult MakeINActiveProducts(int ? id)
         {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -228,9 +226,7 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult categoryVisProducts(int category_ID)
         {
-
-
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -254,7 +250,7 @@ namespace OnlineSuperMartket.Controllers
         {
 
 
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }
@@ -275,7 +271,7 @@ namespace OnlineSuperMartket.Controllers
         //
 
         public ActionResult brandsCategory() {
-            if (Session["UserID"] == null)
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 return Redirect("~/AdminLogin/Index");
             }

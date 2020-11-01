@@ -264,36 +264,62 @@ $(document).ready(function(){
 		}
 		});
 
+            //login_vendor
+
+
+
+		
+		   
+	
+
+
 
 	    //-----users registeration------//
 		$('#signup_submit_vendor').click(function (e) {
-		    debugger;
-		    e.preventDefault();
-		    $.ajax({
-		        url: `/vendor/getRegister`,
-		        dataType: 'json',
-		        type: 'post',
-		        data: $('#signUp_form').serialize(),
-		        success: function (response) {
+		        debugger;
+		        var isEmpty = false;
+		        $("#signUp_form").find("input").each(function () {
 		            debugger;
-		            var controller_result = response;
-		            if (controller_result == true) {
+		            if ($(this).val() == "") {
 
-		               
-		                window.location.href = "/vendor/firstScreen";
+		                $(this).css('border-color', 'red');
+		                isEmpty = true;
+
+		            } else {
+		                $(this).css('border-color', 'white');
+
 		            }
 
-		            if (controller_result == false) {
+		        })
+		        if (!isEmpty) {
+		            debugger;
+		            e.preventDefault();
+		            $.ajax({
+		                url: `/vendor/getRegister`,
+		                dataType: 'json',
+		                type: 'post',
+		                data: $('#signUp_form').serialize(),
+		                success: function (response) {
+		                    debugger;
+		                    var controller_result = response;
+		                    if (controller_result == true) {
 
-		                alert("Your email already is in use.")
-		            }
 
-		        },
+		                        window.location.href = "/vendor/firstScreen";
+		                    }
 
-		        error: function (error) {
-		            console.log(error);
+		                    if (controller_result == false) {
+
+		                        alert("Your email already is in use.")
+		                    }
+
+		                },
+
+		                error: function (error) {
+		                    console.log(error);
+		                }
+		            })
 		        }
-		    })
 		});
 
 	    //-----users registeration------//

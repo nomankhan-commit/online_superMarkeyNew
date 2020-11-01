@@ -12,25 +12,29 @@ namespace OnlineSuperMartket.Controllers
         // GET: Category
         public ActionResult Index(int id)
         {
-            ViewBag.products = db.Products.ToList();
-            ViewBag.brands = db.Brands.ToList();
-            ViewBag.category = db.Categories.ToList();
-            ViewBag.Vendor = db.users.Where(x => x.role_ID == 1).ToList();
-            ViewBag.page_Category="";
-            
-            var a =db.Categories.Find(id);
            
-            var p = db.Products.Where(x => x.category_ID == id && x.is_active == true).ToList();
-            ViewBag.prodts = p;
-            ViewBag.pageName = a.category_name;
-            //ViewBag.link_ = "/services/services";
+                //Role_ID
+                ViewBag.products = db.Products.ToList();
+                ViewBag.brands = db.Brands.ToList();
+                ViewBag.category = db.Categories.ToList();
+                ViewBag.Vendor = db.users.Where(x => x.role_ID == 1).ToList();
+                ViewBag.page_Category = "";
 
-            return View();
+                var a = db.Categories.Find(id);
+
+                var p = db.Products.Where(x => x.category_ID == id && x.is_active == true).ToList();
+                ViewBag.prodts = p;
+                ViewBag.pageName = a.category_name;
+                //ViewBag.link_ = "/services/services";
+
+                return View();
+            
+               
         }
 
 
-        public ActionResult customerAfterPurchase() {
-
+        public ActionResult customerAfterPurchase()
+        {
             ViewBag.products = db.Products.ToList();
             ViewBag.brands = db.Brands.ToList();
             ViewBag.category = db.Categories.ToList();
@@ -40,14 +44,14 @@ namespace OnlineSuperMartket.Controllers
             //var a = db.Categories.Find(id);
 
             //var p = db.Products.Where(x => x.category_ID == id).ToList();
-            var p = db.Products.Where(x=>x.is_active == true).ToList();
+            var p = db.Products.Where(x => x.is_active == true).ToList();
             ViewBag.prodts = p;
             //ViewBag.pageName = a.category_name;
             ViewBag.pageName = "Shop Now!";
             //ViewBag.link_ = "/services/services";
 
             return View();
-
+        
         }
     }
 }

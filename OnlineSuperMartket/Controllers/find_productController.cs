@@ -9,6 +9,7 @@ using System.Data.Entity;
 using System.Configuration;
 using System.Net.Mail;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace OnlineSuperMartket.Controllers
 {
@@ -23,19 +24,29 @@ namespace OnlineSuperMartket.Controllers
         // GET: find_product
         public ActionResult addToCart(int id)
         {
-            if (Session["UserID"] == null || Session["UserID"].ToString() == "1" || Session["UserID"].ToString() == "1009")
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
-                //Session["UserID"] = null;
-                //Session["FullName"] = null;
-                //Session["last_name"] = null;
-                //Session["Role_ID"] = null;
-                //Session["userDetails"] = null;
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
 
-                //Session.Clear();
-                //Session.Abandon();
-                //return Redirect("~/Accounts/login_signup");
-                //return Redirect("~/Accounts/login_signup");
-                return Json("nullsession", JsonRequestBehavior.AllowGet);
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else if (Session["Role_ID"].ToString() == "1" || Session["Role_ID"].ToString() == "1009")
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
             }
             else
             {
@@ -104,7 +115,19 @@ namespace OnlineSuperMartket.Controllers
 
 
         public ActionResult cartView() {
-            if (Session["UserID"] == null || Session["UserID"].ToString() == "1" || Session["UserID"].ToString() == "1009")
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else if (Session["Role_ID"].ToString() == "1" || Session["Role_ID"].ToString() == "1009")
             {
                 Session["UserID"] = null;
                 Session["FullName"] = null;
@@ -145,6 +168,7 @@ namespace OnlineSuperMartket.Controllers
                 return Redirect("~/Accounts/login_signup");
             }
 
+
            
 
 
@@ -152,13 +176,88 @@ namespace OnlineSuperMartket.Controllers
 
         //-----------------//
 
+     
 
+            public ActionResult overQtyCheck(string [] idarray_, string [] qtyarray_)
+        {
+
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else if (Session["Role_ID"].ToString() == "1" || Session["Role_ID"].ToString() == "1009")
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else
+            {
+
+                AddToCart addtocart_ = new AddToCart();
+                List<AddToCart> filterbyid = new List<AddToCart>();
+                List<AddToCart> filterbyqty_ = new List<AddToCart>();
+
+                var dbData = db.AddToCarts.ToList();
+
+                for (int i = 0; i < idarray_.Length; i++)
+                {
+                    var idddd = idarray_[i];
+                    var iddddqtt = qtyarray_[i] == "" ? "1" : qtyarray_[i];
+                    List<AddToCart> sorted = dbData.Where(x => x.AddToCart_id == Convert.ToInt16(idddd) && x.stock < Convert.ToInt16(iddddqtt)).ToList();
+
+                    foreach (var item in sorted)
+                    {
+                        AddToCart addtocart = new AddToCart();
+                        addtocart.Product_name = item.Product_name;
+                        addtocart.AddToCart_id = item.AddToCart_id;
+                        addtocart.stock = item.stock;
+                        filterbyid.Add(addtocart);
+                    }
+
+                }
+
+                var json = JsonConvert.SerializeObject(filterbyid);
+
+                return Json(json, JsonRequestBehavior.AllowGet);
+                
+            }
+
+        }
 
 
         //----------------//
         public ActionResult carDelete(int id)
         {
-            if (Session["UserID"] == null || Session["UserID"].ToString() == "1" || Session["UserID"].ToString() == "1009")
+
+            //if (Session["UserID"] == null || Session["UserID"].ToString() == "1" || Session["UserID"].ToString() == "1009")
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            else if ( Session["Role_ID"].ToString() == "1" || Session["Role_ID"].ToString() == "1009")
             {
                 Session["UserID"] = null;
                 Session["FullName"] = null;
@@ -207,8 +306,8 @@ namespace OnlineSuperMartket.Controllers
         }
 
 
-        public ActionResult makeorder(string [] pids, string amount) {
-            if (Session["UserID"] == null || Session["UserID"].ToString() == "1" || Session["UserID"].ToString() == "1009")
+        public ActionResult makeorder(string [] pids, string amount, string  qty) {
+            if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 Session["UserID"] = null;
                 Session["FullName"] = null;
@@ -218,21 +317,34 @@ namespace OnlineSuperMartket.Controllers
 
                 Session.Clear();
                 Session.Abandon();
-                // return RedirectPermanent("/Accounts/login_signup");
-                //  return View();
-                return Redirect("~/My/home_");
+                return Redirect("~/Accounts/login_signup");
             }
+            else if (Session["Role_ID"].ToString() == "1" || Session["Role_ID"].ToString() == "1009")
+            {
+                Session["UserID"] = null;
+                Session["FullName"] = null;
+                Session["last_name"] = null;
+                Session["Role_ID"] = null;
+                Session["userDetails"] = null;
+
+                Session.Clear();
+                Session.Abandon();
+                return Redirect("~/Accounts/login_signup");
+            }
+            
             else
             {
                 try
                 {
+                    List<Product> productsdetails = new List<Product>();
+                    
                     var productsIDs = pids;
                     var useridd = int.Parse(Session["UserID"].ToString());
                     var customerDetails = db.users.Where(x => x.userID == useridd).ToList();
                     for (int i = 0; i < pids.Length; i++)
                     {
                         var aa = int.Parse(pids[i]);
-                        var productsdetails = db.Products.Where(x => x.Product_ID == aa).ToList();
+                         productsdetails = db.Products.Where(x => x.Product_ID == aa).ToList();
                         string body = "You have an order against this products (product id = " + productsdetails[0].Product_ID + " ) \n products name (" + productsdetails[0].Product_name + ") \n amount = ( " + productsdetails[0].retail_price + ").\n Customer Address is (" + customerDetails[0].Address + ")";
 
                         order order = new order();
@@ -251,12 +363,27 @@ namespace OnlineSuperMartket.Controllers
 
                         db.orders.Add(order);
                         db.SaveChanges();
+                        //db.updatStock(productsdetails[0].Product_ID,);
                         db.makeorder(useridd);
                         Emai("Order Notificationi ", productsdetails[0].sellorName.ToString(), body);
-                      //  Emai("Order Notificationi ", "my@gmail.com", body);
+                        //  Emai("Order Notificationi ", "my@gmail.com", body);
 
+                        string[] qtyarray = qty.Split(',');
+
+                        for (int j = 0; j < qtyarray.Length; j++)
+                        {
+                            var abb = productsdetails[0].stock - Convert.ToInt16(qtyarray[i]);
+
+
+                            
+                            db.updatStock(productsdetails[0].Product_ID, abb);
+                        }
 
                     }
+
+
+                   
+
                     return Json(true, JsonRequestBehavior.AllowGet);
                 }
                 catch (Exception ex)

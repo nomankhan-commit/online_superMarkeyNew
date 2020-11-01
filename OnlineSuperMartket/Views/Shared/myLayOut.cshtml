@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -231,6 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <input type="hidden" id="page"  value="@ViewBag.pageName"/>
     <input type="hidden" id="link" value="@ViewBag.link_" />
+    <input type="hidden" id="quentity" value="" />
 
     <span id="nav_section">
         
@@ -362,7 +365,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         }
                         
                          <li id="dyn_nave"></li>
-                         @if (Session["UserID"] != null && Session["Role_ID"].ToString() == "1")
+                         @if (Session["UserID"] != null && Session["Role_ID"].ToString() == "1"  && Session["isActive"].ToString() == "true")
                          {
                             
                             @*<li><button type="button" class="cat_brand" id="myModal_products" data-toggle="modal" data-target="#myModal_products">Add products</button> </li>*@
@@ -420,28 +423,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </button>
                 </div>              
                 <!-- /.navbar-collapse -->
-                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                <ul class="nav navbar-nav nav_1">
-                    @if (Enumerable.Count(ViewBag.category) > 0)
-                    {
-                        foreach (var item in ViewBag.category)
-                        {
-                            var id = @item.category_ID;
-                            var link= "http://localhost:31574/Category/Index/";
-                            var link2 = link + id;
-                   
-                            <li><a href="@link2">@item.category_name</a></li>
 
-                        }
-                    }
-                    @if (Enumerable.Count(ViewBag.category) <= 0)
+               
+                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                        <ul class="nav navbar-nav nav_1">
+                            @if (Enumerable.Count(ViewBag.category) > 0)
+                            {
+                                foreach (var item in ViewBag.category)
+                                {
+                                    var id = @item.category_ID;
+                                    var link = "http://localhost:31574/Category/Index/";
+                                    var link2 = link + id;
 
-                    {
-                        <li><a href="javascript:;">no category present</a></li>
+                                    <li><a href="@link2">@item.category_name</a></li>
 
-                    }
-                 </ul>
-        </div>
+                                }
+                            }
+                            @if (Enumerable.Count(ViewBag.category) <= 0)
+
+                            {
+                                <li><a href="javascript:;">no category present</a></li>
+
+                            }
+                        </ul>
+                    </div>
+                 
+               
 
         </nav>
     </div>
@@ -464,6 +471,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
    
     <script src="https://cdn3.devexpress.com/jslib/20.1.7/js/dx.all.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"defer></script>
 
     <script>
 		paypal.minicart.render();
@@ -639,32 +647,54 @@ $(document).ready(function(){
 	  
 	    //-----users registeration------//
 		$('#signup_submit').click(function (e) {
+
 		    debugger;
-		    e.preventDefault();
-		    $.ajax({
-		        url: `/Accounts/create_User`,
-		        dataType: 'json',
-		        type: 'post',
-		        data: $('#signUp_form').serialize(),
-		        success: function (response) {
-		            debugger;
-		            var controller_result = response;
-		            if (controller_result == true) {
+		    var isEmpty = false;
+		    $("#signUp_form").find("input").each(function () {
+		        debugger;
+		        if ($(this).val() == "") {
 
-		                window.location.href = "/My/home";
-		            }
+		            $(this).css('border-color', 'red');
+		            isEmpty = true;
 
-		            if (controller_result == false) {
+		        } else {
+		            $(this).css('border-color', 'white');
 
-		                alert("Your email already is in use.")
-		            }
-
-		        },
-
-		        error: function (error) {
-		            console.log(error);
 		        }
+
 		    })
+		    if (!isEmpty) {
+		        debugger;
+
+		        debugger;
+		        e.preventDefault();
+		        $.ajax({
+		            url: `/Accounts/create_User`,
+		            dataType: 'json',
+		            type: 'post',
+		            data: $('#signUp_form').serialize(),
+		            success: function (response) {
+		                debugger;
+		                var controller_result = response;
+		                if (controller_result == true) {
+
+		                    window.location.href = "/My/home";
+		                }
+
+		                if (controller_result == false) {
+
+		                    alert("Your email already is in use.")
+		                }
+
+		            },
+
+		            error: function (error) {
+		                console.log(error);
+		            }
+		        })
+		    }
+
+
 		});
 
 	    //-----users registeration------//
@@ -875,8 +905,8 @@ $(document).ready(function(){
 
 	                },
 	                error: function (error) {
-
-	                    alert(`${error}\n Error occurd! check your console for Error.`);
+                    window.location.href = "/Accounts/login_signup";
+	                   // alert(`${error}\n Error occurd! check your console for Error.`);
 	                    console.log(error)
 	                }
 	            });
@@ -935,19 +965,98 @@ $(document).ready(function(){
 
 	        })
 
+
+            
+	        //$("body").on("keyup", ".quentityInput", function () {
+
+	        //    var amount = $(this).closest('tr').children('td:eq(3)').text();
+            //    var quentity = $(this).closest('tr').children('td:eq(4)').find("input").val();
+            //    var inputValue = $(this).val();
+            //    var hiddenamoutd11 = $("#Bakcuphiddemamount").val();
+            //    if (inputValue == null || inputValue == "" || inputValue == 0) {
+            //        var a = " RS --- " + hiddenamoutd11 + "PKR";
+            //        var amoutn1 = $("#amount").html(a);
+            //        $("#hiddemamount").val(hiddenamoutd11);
+            //    }
+               
+            
+            //})
+
+
+	        //$("body").on("keyup", ".quentityInput", function () {
+
+	        //    var amount = $(this).closest('tr').children('td:eq(3)').text();
+	        //    var quentity = $(this).closest('tr').children('td:eq(4)').find("input").val();
+	        //    var iddd = $(this).attr("id");
+	        //    debugger;
+	        //    data = {};
+	        //    data.id = $(this).attr("id");
+	        //    data.qty = quentity;
+
+	        //    var ab = "input:not(#" + iddd + ")";
+
+	        //    $.ajax({
+	        //        url: `/my/checkQty`,
+	        //        dataType: 'json',
+	        //        type: 'POST',
+	        //        data: data,
+
+	        //        success: function (response) {
+	        //            debugger;
+
+	        //            if (response[1] == "1") {
+	        //                if (quentity != "" && quentity != 0) {
+	        //                    debugger;
+	        //                    $(ab).prop("readonly", false);
+	        //                    $("#makeorder").removeAttr("disabled")
+	        //                    var amoutn1 = $("#hiddemamount").val();
+
+	        //                    var amount2 = parseInt(amount) * parseInt(quentity);
+	        //                    var amoutn3 = parseInt(amoutn1) + parseInt(amount2) //- parseInt(amount);
+
+	        //                    var a = " RS --- " + amoutn3 + "PKR";
+
+	        //                    $("#hiddemamount").val(amoutn3);
+	        //                    var amoutn1 = $("#amount").html(a);
+	        //                }
+	        //            } else {
+	        //                debugger;
+	        //                $("#makeorder").attr("disabled")
+	                   
+	        //                $(ab).prop("readonly", true);
+	        //                //alert(response[0]);
+	        //            }
+
+	        //        },
+	        //        error: function (error) {
+
+	        //            alert(`${error}\n Error occurd! check your console for Error.`);
+	        //            console.log(error)
+	        //        }
+	        //    });
+
+
+
+
+
+
+
+	        //})
+
+
+
+
+
 	        $("body").on("click", ".addQuentity", function () {
 
-	            var amount = $(this).closest('tr').children('td:eq(3)').text();
-	            var quentity = $(this).closest('tr').children('td:eq(4)').find("input").val();
+	            var amount = $(this).closest('tr').children('td:eq(4)').text();
+	            var quentity = $(this).closest('tr').children('td:eq(5)').find("input").val();
 
 
 	            debugger;
 	            data = {};
 	            data.id = $(this).attr("id");
 	            data.qty = quentity;
-
-
-
 
 	            $.ajax({
 	                url: `/my/checkQty`,
@@ -965,7 +1074,7 @@ $(document).ready(function(){
 	                            var amoutn1 = $("#hiddemamount").val();
 	                          
 	                            var amount2 = parseInt(amount) * parseInt(quentity);
-	                            var amoutn3 = parseInt(amoutn1) + parseInt(amount2);
+	                            var amoutn3 = parseInt(amoutn1) + parseInt(amount2) //- parseInt(amount);
 
 	                            var a = " RS --- " + amoutn3 + "PKR";
 
@@ -1166,14 +1275,15 @@ $(document).ready(function(){
 	            $("#myTable_wrapper tbody tr").each(function () {
 
 	                var currentRow = $(this).closest("tr");
-	                idArray.push(currentRow.find("td:eq(0)").html());
+	                idArray.push(currentRow.find("td:eq(1)").html());
 
 
 	            });
 	           
 	            data = {
 	                pids: idArray,
-	                amount: $("#hiddemamount").val()
+	                amount: $("#hiddemamount").val(),
+	                qty : $("#quentity").val()
 	            };
 	            
 	            debugger
@@ -1210,86 +1320,117 @@ $(document).ready(function(){
 
 
 	        $("body").on("click", "#makeorder", function () {
-
-	            $("#confrommodal").modal("show");
-
-
-	            //$(".loader_").show();
-	            //var idArray = [];
-	            //debugger
-	            //$("#myTable_wrapper tbody tr").each(function () {
-
-	            //    var currentRow = $(this).closest("tr");
-	            //    idArray.push(currentRow.find("td:eq(0)").html());
-
-
-	            //});
+	            var idarray = [];
+	            var qtyarray = [];
 	           
-	            //data = {
-	            //    pids: idArray,
-	            //    amount: $("#hiddemamount").val()
-	            //};
-	            
-	            //debugger
-	            //$.ajax({
-	            //    url: `/find_product/makeorder`,
-	            //    dataType: 'json',
-	            //    type: 'POST',
-	            //    data: data,
-	            //    success: function (response) {
-	            //        debugger;
-	            //        var controller_result = response;
-	            //        $(".loader_").hide();
+	            $("#myTable tbody tr").each(function (i, e) {
+	                debugger;
+	               
+	                var id = $(e).closest('tr').children('td:eq(0)').text();
+	                var quentity = $(e).closest('tr').children('td:eq(5)').find("input").val();
+                    idarray.push(id)
+                    qtyarray.push(quentity == "" ? 1 : quentity)
+	            })
+	            data1 = {};
+	            data1.idarray_ = idarray;
+	            data1.qtyarray_ = qtyarray;
+	          
+	                debugger
+	                $.ajax({
+	                    url: `/find_product/overQtyCheck`,
+	                    dataType: 'json',
+	                    type: 'POST',
+	                    data: data1,
+	                    success: function (response) {
+	                        debugger;
+	                       
+	                        if (JSON.parse(response).length > 0) {
+	                            for (var i = 0; i < JSON.parse(response).length; i++) {
+	                                var cals = JSON.parse(response)[i].AddToCart_id;
+	                                $("#myTable tbody tr").each(function (i, e) {
+	                                    var val = $(this).closest('tr').children('td:eq(5)').find("input").attr("class");
+	                                    
+	                                    $("." + cals).css('border-color', 'red');
+	                                    
+	                                })
+	                            }
 
-	            //        if (response) {
-	            //            //alert("Your order has placed.\n If you have any query please contact us.");
-	            //            //window.location.href = "/Category/customerAfterPurchase";
-	            //            $(".showLiafterShop").show();
 
+	                        } else {
 
-	            //        }
+	                            $("#confrommodal").modal("show");
+	                            $("#quentity").val(data1.qtyarray_);
+	                        }
 
-	            //    },
-	            //    error: function (error) {
-	            //        $(".loader_").hide();
-	            //        alert(`${error}\n Error occurd! check your console for Error.`);
-	            //        console.log(error)
-	            //    }
-	            //});
+	                    },
+	                    error: function (error) {
+	                        $(".loader_").hide();
+	                        alert(`${error}\n Error occurd! check your console for Error.`);
+	                        console.log(error)
+	                    }
+	                });
+
 	        })
 
 
 
 	        $("body").on("click", "#contus", function () {
-	            $(".loader_").show();
+	            var isEmpty = false;
+	            $("#contactusForm").find("input").each(function () {
+	                debugger;
+	                if ($(this).val() == "") {
+
+	                    $(this).css('border-color', 'red');
+	                    isEmpty = true;
+
+	                } else {
+	                    $(this).css('border-color', 'white');
+
+	                }
+
+	                
+	                if ($('textarea').val() == "") {
+
+	                    $('textarea').css('border-color', 'red');
+	                }
+
+	            })
+	            if (!isEmpty) {
+	                $(".loader_").show();
+	                debugger
+	                $.ajax({
+	                    url: `/Admindashboard/ContactusEmail`,
+	                    dataType: 'json',
+	                    type: 'POST',
+	                    data: $("#contactusForm").serialize(),
+	                    success: function (response) {
+	                        debugger;
+	                        var controller_result = response;
+	                        $(".loader_").hide();
+
+	                        if (response) {
+	                            alert("Thank You for connacting us.");
+	                            //window.location.href = "/Category/customerAfterPurchase";
+	                            debugger;
+
+
+	                        }
+
+	                    },
+	                    error: function (error) {
+	                        $(".loader_").hide();
+	                        alert(`${error}\n Error occurd! check your console for Error.`);
+	                        console.log(error)
+	                    }
+	                });
+
+	            }
+
+
+	           
 	            
 	         
-	            debugger
-	            $.ajax({
-	                url: `/Admindashboard/ContactusEmail`,
-	                dataType: 'json',
-	                type: 'POST',
-	                data: $("#contactusForm").serialize(),
-	                success: function (response) {
-	                    debugger;
-	                    var controller_result = response;
-	                    $(".loader_").hide();
-
-	                    if (response) {
-	                        alert("Thank You for connacting us.");
-	                        //window.location.href = "/Category/customerAfterPurchase";
-	                        debugger;
-
-	                        
-	                    }
-
-	                },
-	                error: function (error) {
-	                    $(".loader_").hide();
-	                    alert(`${error}\n Error occurd! check your console for Error.`);
-	                    console.log(error)
-	                }
-	            });
+	           
 	        })
 
             //

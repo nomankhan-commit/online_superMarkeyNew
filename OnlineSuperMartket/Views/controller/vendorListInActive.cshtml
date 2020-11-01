@@ -1,4 +1,8 @@
-﻿
+﻿@if (string.IsNullOrEmpty(Session["UserID"] as string))
+{
+
+    Html.Action("home_", "My");
+}
 @{
   
     Layout = "~/Views/Shared/myLayOut.cshtml";
@@ -18,6 +22,8 @@
                     <th scope="col">Email</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
+                    <th scope="col">Shop Name</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Req Date</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -33,6 +39,9 @@
                         <td>@item.email</td>
                         <td>@item.first_name</td>
                         <td>@item.last_name</td>
+                        <td>@item.shopname</td>
+                        <td>@item.Address</td>
+                        
                         <td>@item.create_at</td>
 
 
