@@ -88,6 +88,7 @@
     <Property Name="customerid" Type="int" />
     <Property Name="customernam" Type="varchar" MaxLength="50" />
     <Property Name="isDispatch" Type="bit" />
+    <Property Name="qty" Type="int" />
   </EntityType>
   <EntityType Name="Payement_Type">
     <Key>

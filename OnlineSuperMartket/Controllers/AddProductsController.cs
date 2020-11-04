@@ -73,8 +73,8 @@ namespace OnlineSuperMartket.Controllers
                 var productID = db.Products.ToList().Last();
 
                 string emailBody = "new Product Uploaded (products id is " + productID.Product_ID.ToString() + ") by vendor ( " + Session["Email"].ToString() + " ). please review  it. http://localhost:31574/Accounts/login_signup '";
-
-                Emai("testing", "nhr146@gmail.com", emailBody);
+                string email = ConfigurationManager.AppSettings["Email"];
+                Emai("testing", email, emailBody);
                 // add // E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\AddProducts\Image\190149747.jpg
                 //        E:\online_superMarkey\OnlineSuperMartket\OnlineSuperMartket\My\Image\190249693.png
 

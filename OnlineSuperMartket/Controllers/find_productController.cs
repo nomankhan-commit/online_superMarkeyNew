@@ -306,7 +306,7 @@ namespace OnlineSuperMartket.Controllers
         }
 
 
-        public ActionResult makeorder(string [] pids, string amount, string  qty) {
+        public ActionResult makeorder(string [] pids, string amount, string  qty, string [] idQtyArray) {
             if (string.IsNullOrEmpty(Session["UserID"] as string))
             {
                 Session["UserID"] = null;
@@ -353,13 +353,14 @@ namespace OnlineSuperMartket.Controllers
                         order.categoryid = productsdetails[0].category_ID;
                         order.productsid = productsdetails[0].Product_ID;
                         order.createAt = DateTime.Now;
-                        order.productsAmount = productsdetails[0].retail_price;
+                        order.productsAmount = productsdetails[0].retail_price * Convert.ToInt16(idQtyArray[i]); 
                         order.prductsname = productsdetails[0].Product_name;
                         order.categoryname = productsdetails[0].Category.category_name;
                         order.venderoname = productsdetails[0].sellorName;
                         order.customerid = useridd;
                         order.customernam = customerDetails[0].email;
                         order.isDispatch = false;
+                        order.qty = Convert.ToInt16(idQtyArray[i]);
 
                         db.orders.Add(order);
                         db.SaveChanges();

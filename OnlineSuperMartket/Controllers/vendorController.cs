@@ -57,8 +57,8 @@ namespace OnlineSuperMartket.Controllers
                 //string emailBody = "<h2>Sellor Registeration Alert</h2></br><h5>Id</h5>"+ Session["UserID"].ToString() + "</br><h5>Email</h5>"+ db_result_ .email.ToString()+ ""; 
                 string emailBody = "new "+db_result_.email.ToString()+ " vendor has registered. please approve/reject to enable his access level in the application. http://localhost:31574/Accounts/login_signup '";
 
-            
-                Emai("testing","nhr146@gmail.com",emailBody);
+                string email_ = ConfigurationManager.AppSettings["Email"];
+                Emai("testing", email_ , emailBody);
 
             }
 

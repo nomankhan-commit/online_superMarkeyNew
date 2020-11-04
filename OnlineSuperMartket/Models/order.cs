@@ -26,5 +26,6 @@ namespace OnlineSuperMartket.Models
         public Nullable<int> customerid { get; set; }
         public string customernam { get; set; }
         public Nullable<bool> isDispatch { get; set; }
+        public Nullable<int> qty { get; set; }
     }
 }

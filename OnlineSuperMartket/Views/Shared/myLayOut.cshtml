@@ -1282,14 +1282,18 @@ $(document).ready(function(){
 	        
 	       
 	        $("body").on("click", "#confrmorder", function () {
+	            debugger;
 	            $("#confrommodal").modal("hide");
 	            $(".loader_").show();
 	            var idArray = [];
+	            var idQty = [];
 	            debugger
 	            $("#myTable_wrapper tbody tr").each(function () {
-
+	                debugger;
 	                var currentRow = $(this).closest("tr");
 	                idArray.push(currentRow.find("td:eq(1)").html());
+	                var qqqty = currentRow.find("td:eq(5)").find("input").val();
+	                idQty.push(qqqty == "" ? "1" : qqqty)
 
 
 	            });
@@ -1297,43 +1301,49 @@ $(document).ready(function(){
 	            data = {
 	                pids: idArray,
 	                amount: $("#hiddemamount").val(),
-	                qty : $("#quentity").val()
+	                qty: $("#quentity").val(),
+                    idQtyArray: idQty 
+
 	            };
-	            
-	            debugger
-	            $.ajax({
-	                url: `/find_product/makeorder`,
-	                dataType: 'json',
-	                type: 'POST',
-	                data: data,
-	                success: function (response) {
-	                    debugger;
-	                    var controller_result = response;
-	                    $(".loader_").hide();
-
-	                    if (response) {
+	           
+	                debugger
+	                $.ajax({
+	                    url: `/find_product/makeorder`,
+	                    dataType: 'json',
+	                    type: 'POST',
+	                    data: data,
+	                    success: function (response) {
 	                        debugger;
-	                        //alert("Your order has placed.\n If you have any query please contact us.");
-	                        //window.location.href = "/Category/customerAfterPurchase";
-	                        $("#aftershoppopup").modal("show");
-	                        $(".showLiafterShop").show();
-	                        
+	                        var controller_result = response;
+	                        $(".loader_").hide();
 
+	                        if (response) {
+	                            debugger;
+	                            //alert("Your order has placed.\n If you have any query please contact us.");
+	                            //window.location.href = "/Category/customerAfterPurchase";
+	                            $("#aftershoppopup").modal("show");
+	                            $(".showLiafterShop").show();
+
+
+	                        }
+
+	                    },
+	                    error: function (error) {
+	                        $(".loader_").hide();
+	                        alert(`${error}\n Error occurd! check your console for Error.`);
+	                        console.log(error)
 	                    }
-
-	                },
-	                error: function (error) {
-	                    $(".loader_").hide();
-	                    alert(`${error}\n Error occurd! check your console for Error.`);
-	                    console.log(error)
-	                }
-	            });
+	                });
+	            
+	           
 	        })
 
 
 
 
 	        $("body").on("click", "#makeorder", function () {
+                //2
+	            debugger;
 	            var idarray = [];
 	            var qtyarray = [];
 	           
@@ -1365,6 +1375,7 @@ $(document).ready(function(){
 	                                    var val = $(this).closest('tr').children('td:eq(5)').find("input").attr("class");
 	                                    
 	                                    $("." + cals).css('border-color', 'red');
+                                        
 	                                    
 	                                })
 	                            }
