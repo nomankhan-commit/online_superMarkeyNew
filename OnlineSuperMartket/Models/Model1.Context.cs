@@ -233,6 +233,23 @@ namespace OnlineSuperMartket.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
+        public virtual int sp_DeleteCateBrand(Nullable<bool> dlt, Nullable<int> type_, Nullable<int> id)
+        {
+            var dltParameter = dlt.HasValue ?
+                new ObjectParameter("dlt", dlt) :
+                new ObjectParameter("dlt", typeof(bool));
+    
+            var type_Parameter = type_.HasValue ?
+                new ObjectParameter("type_", type_) :
+                new ObjectParameter("type_", typeof(int));
+    
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteCateBrand", dltParameter, type_Parameter, idParameter);
+        }
+    
         public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?

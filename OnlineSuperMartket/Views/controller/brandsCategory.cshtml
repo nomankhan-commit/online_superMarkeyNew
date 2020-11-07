@@ -123,6 +123,7 @@
 
                                         <button type="button" name="@item.category_ID" id="@item.category_ID" class="btn btn-primary update_category">Update</button>
                                         @*<button type="button" name="@item.category_ID" id="@item.category_ID" class="btn btn-danger dlt_category">Delete</button>*@
+                                        <button type="button"  id="@item.category_ID" tp="1" class="btn btn-danger dltBrandCat">Delete</button>
                                     </div>
                                 </td>
 
@@ -171,6 +172,7 @@
 
                                     <button type="button" name="@item.brand_ID" id="@item.brand_ID" class="btn btn-primary update_brand">Update</button>
                                     @*<button type="button" name="@item.brand_ID" id="@item.brand_ID" class="btn btn-danger dltBrand">Delete</button>*@
+                                    <button type="button"  id="@item.brand_ID" tp="2" class="btn btn-danger dltBrandCat">Delete</button>
                                 </div>
                             </td>
 
@@ -221,6 +223,44 @@
 
 
         })
+
+        $('body').on('click', ".dltBrandCat", function () {
+            $(".loader_").show();
+            debugger
+            data = {};
+            data.type = $(this).attr('tp');
+            data.id = $(this).attr('id');
+
+            $.ajax({
+                url: `/controller/dltCatBrand`,
+                dataType: 'json',
+                type: 'POST',
+                data: data,
+                success: function (response) {
+                    $(".loader_").hide();
+                    if (response == "can not dlt") {
+                        alert("it can not be deleted it is link with products.");
+                    }
+                    else {
+                        window.location.href = "/controller/brandsCategory";
+                    }
+
+               
+
+                },
+                error: function (error) {
+                    $(".loader_").hide();
+                    alert(`${error}\n Error occurd! check your console for Error.`);
+                    console.log(error)
+                }
+            });
+
+        })
+
+     
+
+
     })
+
 
 </script>

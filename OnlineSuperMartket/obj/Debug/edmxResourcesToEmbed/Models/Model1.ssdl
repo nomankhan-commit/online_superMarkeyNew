@@ -31,6 +31,7 @@
     <Property Name="create_at" Type="datetime" Nullable="false" />
     <Property Name="update_at" Type="datetime" />
     <Property Name="is_active" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -44,6 +45,7 @@
     <Property Name="create_at" Type="datetime" Nullable="false" />
     <Property Name="update_at" Type="datetime" />
     <Property Name="is_active" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
   </EntityType>
   <EntityType Name="Discounts">
     <Key>
@@ -344,6 +346,11 @@
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteCateBrand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dlt" Type="bit" Mode="In" />
+    <Parameter Name="type_" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />

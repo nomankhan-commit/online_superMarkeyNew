@@ -62,32 +62,42 @@ namespace OnlineSuperMartket.Controllers
 
                 if (id_user_ != null)
                 {
+                    var iddint = Convert.ToInt16(id_user_.ToString());
 
-                    // dynamic db_resutl = db.Products.Where(x => x.Product_ID == id && x.is_active == true).ToList().FirstOrDefault();
+                    AddToCart  isAddtoCart =  db.AddToCarts.Where(x => x.Product_ID == id  && x.user_id_ == iddint && x.makeorder == false ).ToList().FirstOrDefault();
+                    if (isAddtoCart == null)
+                    {
+                        // dynamic db_resutl = db.Products.Where(x => x.Product_ID == id && x.is_active == true).ToList().FirstOrDefault();
 
-                    var db_resutl = db.Products.Where(x => x.Product_ID == id && x.is_active == true).ToList();
+                        var db_resutl = db.Products.Where(x => x.Product_ID == id && x.is_active == true).ToList();
+
+                        insertData.user_id_ = user_id;
+                        insertData.Product_ID = db_resutl[0].Product_ID;
+                        insertData.category_ID = db_resutl[0].category_ID;
+                        insertData.brand_ID = db_resutl[0].brand_ID;
+                        insertData.Product_name = db_resutl[0].Product_name;
+
+                        insertData.Product_disc = db_resutl[0].Product_disc;
+                        insertData.Product_code = db_resutl[0].Product_code;
+                        insertData.whole_sale_price = db_resutl[0].whole_sale_price;
+                        insertData.retail_price = db_resutl[0].retail_price;
+                        insertData.stock = db_resutl[0].stock;
+
+                        insertData.imgPath = db_resutl[0].imgPath;
+                        insertData.create_at = db_resutl[0].create_at;
+                        insertData.update_at = db_resutl[0].update_at;
+                        insertData.is_active = db_resutl[0].is_active;
+                        insertData.makeorder = false;
+
+                        db.AddToCarts.Add(insertData);
+                        db.SaveChanges();
+                        num++;
+                    }
+                    else
+                    {
+                        return Json("already Addtocart", JsonRequestBehavior.AllowGet);
+                    }
                     
-                    insertData.user_id_ = user_id;
-                    insertData.Product_ID = db_resutl[0].Product_ID;
-                    insertData.category_ID = db_resutl[0].category_ID;
-                    insertData.brand_ID = db_resutl[0].brand_ID;
-                    insertData.Product_name = db_resutl[0].Product_name;
-
-                    insertData.Product_disc = db_resutl[0].Product_disc;
-                    insertData.Product_code = db_resutl[0].Product_code;
-                    insertData.whole_sale_price = db_resutl[0].whole_sale_price;
-                    insertData.retail_price = db_resutl[0].retail_price;
-                    insertData.stock = db_resutl[0].stock;
-
-                    insertData.imgPath = db_resutl[0].imgPath;
-                    insertData.create_at = db_resutl[0].create_at;
-                    insertData.update_at = db_resutl[0].update_at;
-                    insertData.is_active = db_resutl[0].is_active;
-                    insertData.makeorder = false;
-
-                    db.AddToCarts.Add(insertData);
-                    db.SaveChanges();
-                    num++;
                 }
                 else
                 {
@@ -346,21 +356,27 @@ namespace OnlineSuperMartket.Controllers
                         var aa = int.Parse(pids[i]);
                          productsdetails = db.Products.Where(x => x.Product_ID == aa).ToList();
                         string body = "You have an order against this products (product id = " + productsdetails[0].Product_ID + " ) \n products name (" + productsdetails[0].Product_name + ") \n amount = ( " + productsdetails[0].retail_price + ").\n Customer Address is (" + customerDetails[0].Address + ")";
+                        var amt = 0;
+                        var qtymil = (idQtyArray[i] == "0" ? 1 : Convert.ToInt16(idQtyArray[i]));
+                        amt = productsdetails[0].retail_price * qtymil ;
 
+
+
+                        var vQty = Convert.ToInt16(idQtyArray[i]) ;
                         order order = new order();
 
                         order.venderid = productsdetails[0].sellorID;
                         order.categoryid = productsdetails[0].category_ID;
                         order.productsid = productsdetails[0].Product_ID;
                         order.createAt = DateTime.Now;
-                        order.productsAmount = productsdetails[0].retail_price * Convert.ToInt16(idQtyArray[i]); 
+                        order.productsAmount = amt; 
                         order.prductsname = productsdetails[0].Product_name;
                         order.categoryname = productsdetails[0].Category.category_name;
                         order.venderoname = productsdetails[0].sellorName;
                         order.customerid = useridd;
                         order.customernam = customerDetails[0].email;
                         order.isDispatch = false;
-                        order.qty = Convert.ToInt16(idQtyArray[i]);
+                        order.qty = Convert.ToInt16(idQtyArray[i] == "0" ? "1" : vQty.ToString());
 
                         db.orders.Add(order);
                         db.SaveChanges();

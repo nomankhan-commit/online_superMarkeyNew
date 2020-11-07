@@ -897,7 +897,10 @@ $(document).ready(function(){
 	                    if (controller_result == "nullsession") {
 	                        window.location.href = "/Accounts/login_signup";
 
-	                    } else {
+	                    } else if (controller_result == "already Addtocart") {
+                        alert("This product already Added to Cart")
+                        }
+	                    else {
 	                        $("#showQuentityofCart").val(controller_result)
 
 	                    }
@@ -1046,66 +1049,126 @@ $(document).ready(function(){
 
 
 
+            
+	        $("body").on("click", ".minusQuentity", function () {
+                debugger;   
+                var amount = $(this).closest('tr').children('td:eq(4)').text();
+                var quentity = $(this).closest('tr').children('td:eq(5)').find(".quentityInput").val();
+                var origionaqty = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").val();
+                var runtimequentity = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val()
+                var thi = this;
+                var minusQtyFor = quentity;
+
+                var minus = parseInt(minusQtyFor) - 1;
+                if (minus <= 1 ) {
+
+                }
+                $(this).closest('tr').children('td:eq(6)').text(parseInt(amount) * parseInt(minus <= 0 ? 1 : minus));
+                $(this).closest('tr').children('td:eq(5)').find(".quentityInput").val(minus <= 0 ? 1 : minus);
+
+            })
+
+
+
+	        $('#sumtotal').click(function () {
+
+	            var price = 0;
+
+
+	            $("#myTable tbody tr").each(function (i, e) {
+	                debugger;
+
+	                var totalamount = $(e).closest('tr').children('td:eq(6)').text();
+	                price += parseInt(totalamount);
+	                
+	            })
+
+	            $("#makeorder").show();
+
+	            var a = " RS --- " + price + "PKR";
+	            $("#hiddemamount").val(price);
+	            var amoutn1 = $("#amount").html(a);
+
+	        });
+
+
 	        $("body").on("click", ".addQuentity", function () {
-                debugger
+	            debugger;   
 	            var amount = $(this).closest('tr').children('td:eq(4)').text();
-	            var quentity = $(this).closest('tr').children('td:eq(5)').find("input").val();
+	            var quentity = $(this).closest('tr').children('td:eq(5)').find(".quentityInput").val();
 	            var origionaqty = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").val();
 	            var runtimequentity = $(this).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val()
 	            var thi = this;
+	            var plusQtyFor = quentity == "" ? 0 : quentity;
 
-	            var adqty = parseInt(quentity) + parseInt(runtimequentity);
+	            var sum = parseInt(plusQtyFor) + 1;
+	            if (sum <= origionaqty) {
 
-	            if (adqty > origionaqty) {
-	                alert("reduce some Quentity.");
+	                $(this).closest('tr').children('td:eq(5)').find(".quentityInput").val(sum);
 
+	                $(this).closest('tr').children('td:eq(6)').text(parseInt(amount) * parseInt(sum));
 	            } else {
-	                debugger;
-	                data = {};
-	                data.id = $(this).attr("id");
-	                data.qty = quentity;
+	                alert(origionaqty + " in stock. \n ");
 
-	                $.ajax({
-	                    url: `/my/checkQty`,
-	                    dataType: 'json',
-	                    type: 'POST',
-	                    data: data,
-
-	                    success: function (response) {
-	                        debugger;
-
-	                        if (response[1] == "1") {
-	                            if (quentity != "" && quentity != 0) {
-
-
-	                                var amoutn1 = $("#hiddemamount").val();
-
-	                                var amount2 = parseInt(amount) * parseInt(quentity);
-	                                var amoutn3 = parseInt(amoutn1) + parseInt(amount2) //- parseInt(amount);
-
-	                                var a = " RS --- " + amoutn3 + "PKR";
-
-	                                $("#hiddemamount").val(amoutn3);
-	                                var amoutn1 = $("#amount").html(a);
-	                                console.log(adqty);
-	                                $(thi).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val(adqty);
-
-
-	                            }
-	                        } else {
-
-	                            alert(response[0]);
-	                        }
-
-	                    },
-	                    error: function (error) {
-
-	                        alert(`${error}\n Error occurd! check your console for Error.`);
-	                        console.log(error)
-	                    }
-	                });
 	            }
+                
 
+                //
+
+	            //var adqty = parseInt(quentity) + parseInt(runtimequentity);
+
+	            //if (adqty > origionaqty) {
+	            //    alert("reduce some Quentity.");
+
+	            //} else {
+	            //    debugger;
+	            //    data = {};
+	            //    data.id = $(this).attr("id");
+	            //    data.qty = quentity;
+
+	            //    $.ajax({
+	            //        url: `/my/checkQty`,
+	            //        dataType: 'json',
+	            //        type: 'POST',
+	            //        data: data,
+
+	            //        success: function (response) {
+	            //            debugger;
+
+	            //            if (response[1] == "1") {
+	            //                if (quentity != "" && quentity != 0) {
+
+
+	            //                    var amoutn1 = $("#hiddemamount").val();
+
+	            //                    var amount2 = parseInt(amount) * parseInt(quentity);
+	            //                    var amoutn3 = parseInt(amoutn1) + parseInt(amount2) //- parseInt(amount);
+
+	            //                    var a = " RS --- " + amoutn3 + "PKR";
+
+	            //                    $("#hiddemamount").val(amoutn3);
+	            //                    var amoutn1 = $("#amount").html(a);
+	            //                    console.log(adqty);
+	            //                    debugger;
+	            //                    $(thi).closest('tr').children('td:eq(5)').find("input[type='hidden']").next("input[type='hidden']").val(adqty);
+	            //                    //$(thi).closest('tr').children('td:eq(5)').find("input").val(adqty);
+
+
+	            //                }
+	            //            } else {
+
+	            //                alert(response[0]);
+	            //            }
+
+	            //        },
+	            //        error: function (error) {
+
+	            //            alert(`${error}\n Error occurd! check your console for Error.`);
+	            //            console.log(error)
+	            //        }
+	            //    });
+	            //}
+                //
 	           
 
 
@@ -1293,7 +1356,7 @@ $(document).ready(function(){
 	                var currentRow = $(this).closest("tr");
 	                idArray.push(currentRow.find("td:eq(1)").html());
 	                var qqqty = currentRow.find("td:eq(5)").find("input").val();
-	                idQty.push(qqqty == "" ? "1" : qqqty)
+	                idQty.push(qqqty == "" ? "0" : qqqty)
 
 
 	            });
@@ -1321,6 +1384,7 @@ $(document).ready(function(){
 	                            debugger;
 	                            //alert("Your order has placed.\n If you have any query please contact us.");
 	                            //window.location.href = "/Category/customerAfterPurchase";
+	                            $("#makeorder").hide();
 	                            $("#aftershoppopup").modal("show");
 	                            $(".showLiafterShop").show();
 
@@ -1342,7 +1406,10 @@ $(document).ready(function(){
 
 
 	        $("body").on("click", "#makeorder", function () {
-                //2
+
+	            if (true) {
+
+	            //2
 	            debugger;
 	            var idarray = [];
 	            var qtyarray = [];
@@ -1352,49 +1419,49 @@ $(document).ready(function(){
 	               
 	                var id = $(e).closest('tr').children('td:eq(0)').text();
 	                var quentity = $(e).closest('tr').children('td:eq(5)').find("input").val();
-                    idarray.push(id)
-                    qtyarray.push(quentity == "" ? 1 : quentity)
+	                idarray.push(id)
+	                qtyarray.push(quentity == "" ? 1 : quentity)
 	            })
 	            data1 = {};
 	            data1.idarray_ = idarray;
 	            data1.qtyarray_ = qtyarray;
 	          
-	                debugger
-	                $.ajax({
-	                    url: `/find_product/overQtyCheck`,
-	                    dataType: 'json',
-	                    type: 'POST',
-	                    data: data1,
-	                    success: function (response) {
-	                        debugger;
+	            debugger
+	            $.ajax({
+	                url: `/find_product/overQtyCheck`,
+	                dataType: 'json',
+	                type: 'POST',
+	                data: data1,
+	                success: function (response) {
+	                    debugger;
 	                       
-	                        if (JSON.parse(response).length > 0) {
-	                            for (var i = 0; i < JSON.parse(response).length; i++) {
-	                                var cals = JSON.parse(response)[i].AddToCart_id;
-	                                $("#myTable tbody tr").each(function (i, e) {
-	                                    var val = $(this).closest('tr').children('td:eq(5)').find("input").attr("class");
+	                    if (JSON.parse(response).length > 0) {
+	                        for (var i = 0; i < JSON.parse(response).length; i++) {
+	                            var cals = JSON.parse(response)[i].AddToCart_id;
+	                            $("#myTable tbody tr").each(function (i, e) {
+	                                var val = $(this).closest('tr').children('td:eq(5)').find("input").attr("class");
 	                                    
-	                                    $("." + cals).css('border-color', 'red');
+	                                $("." + cals).css('border-color', 'red');
                                         
 	                                    
-	                                })
-	                            }
-
-
-	                        } else {
-
-	                            $("#confrommodal").modal("show");
-	                            $("#quentity").val(data1.qtyarray_);
+	                            })
 	                        }
 
-	                    },
-	                    error: function (error) {
-	                        $(".loader_").hide();
-	                        alert(`${error}\n Error occurd! check your console for Error.`);
-	                        console.log(error)
-	                    }
-	                });
 
+	                    } else {
+
+	                        $("#confrommodal").modal("show");
+	                        $("#quentity").val(data1.qtyarray_);
+	                    }
+
+	                },
+	                error: function (error) {
+	                    $(".loader_").hide();
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            });
+	        }
 	        })
 
 

@@ -5,18 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="262478a0ff344039b42f2b7e540862a3" Name="Diagram1">
-        <EntityTypeShape EntityType="online_superMarket_systemModel.AddToCart" Width="1.5" PointX="8.75" PointY="9.875" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.Brand" Width="1.5" PointX="3" PointY="0.75" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.Category" Width="1.5" PointX="0.75" PointY="5.5" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.Discount" Width="1.5" PointX="5.25" PointY="5.125" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.Location" Width="1.5" PointX="8.75" PointY="1.875" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.order" Width="1.5" PointX="0.75" PointY="10.875" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.Payement_Type" Width="1.5" PointX="6" PointY="2" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.Product" Width="1.5" PointX="3" PointY="4.625" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.statement" Width="1.5" PointX="8.25" PointY="5.375" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.sysdiagram" Width="1.5" PointX="10.75" PointY="1.875" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.userRole" Width="1.5" PointX="3.75" PointY="12.75" />
-        <EntityTypeShape EntityType="online_superMarket_systemModel.user" Width="1.5" PointX="6" PointY="11" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.AddToCart" Width="1.5" PointX="8.75" PointY="10.125" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Brand" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Category" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Discount" Width="1.5" PointX="5.25" PointY="5.5" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Location" Width="1.5" PointX="8.75" PointY="2.125" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.order" Width="1.5" PointX="0.75" PointY="11.125" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Payement_Type" Width="1.5" PointX="6" PointY="2.375" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Product" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.statement" Width="1.5" PointX="8.25" PointY="5.625" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.sysdiagram" Width="1.5" PointX="10.75" PointY="2.125" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.userRole" Width="1.5" PointX="3.75" PointY="13" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.user" Width="1.5" PointX="6" PointY="11.25" />
         <AssociationConnector Association="online_superMarket_systemModel.FK_Discounts_Brand" />
         <AssociationConnector Association="online_superMarket_systemModel.FK_Product_Brand" />
         <AssociationConnector Association="online_superMarket_systemModel.FK_Discounts_Category" />

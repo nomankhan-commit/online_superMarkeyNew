@@ -47,8 +47,8 @@
                         <th scope="col">Dis</th>
                        
                         <th scope="col">Retail Price</th>
-                        <th scope="col">Quentity </th>
-                      
+                        <th scope="col">Qty</th>
+                        <th scope="col">Total Amount</th>
                         <th scope="col">imgPath</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -70,23 +70,23 @@
                         <td>@item.retail_price</td>
 
                         <td>
-                        <input type="number" id="@item.Product_ID"  placeholder="1 Qty selected" class="quentityInput @item.AddToCart_id" />
+                        <input type="number" id="@item.Product_ID"  placeholder="1"  readonly class="quentityInput @item.AddToCart_id" />
                             <input type="hidden" id="origionalqty_@item.Product_ID" value="@item.stock" />
                             <input type="hidden" id="runtimeqty_@item.Product_ID" value="0" />
                         
                         </td>
-                      
+                      <td>@item.retail_price</td>
                        
                         <td colspan=4><img src="~/AddProducts/Image/@name" alt="~/AddProducts/Image/@name" border=3 height=100 width=100></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="javascript:;" class="addQuentity" id="@item.Product_ID">Add</a>
+                                <a href="javascript:;" class="addQuentity" id="@item.Product_ID">+</a>
+                                <a href="javascript:;" class="minusQuentity" id="@item.Product_ID">-</a>
                                 @*<button type="button" name="@item.Product_ID"  id="@item.Product_ID"  class="btn btn-primary buy_products">buy</button>*@
                                 @*<a href="~/find_product/carDelete/@item.AddToCart_id">buy</a>*@
                                 <a href="~/find_product/carDelete/@item.AddToCart_id">Remove</a>
                             </div>
                           
-
                         </td>
                         
                     </tr>
@@ -136,7 +136,13 @@
       @if (ViewBag.amount > 0)
       {
         <label class="form-check-label">
-            <a href="javascript:;" class="btn btn-success" id="makeorder">Make Order</a>
+            
+            <a href="javascript:;" class="btn btn-success" id="sumtotal">Sum Total</a>
+            <a href="javascript:;" class="btn btn-success" style="display:none" id="makeorder">Make Order</a>
+
+        </label>
+        <label class="form-check-label">
+           
         </label>
       }
        

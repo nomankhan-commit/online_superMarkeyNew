@@ -115,6 +115,26 @@ namespace OnlineSuperMartket.Controllers
 
         }
 
+        public JsonResult dltCatBrand(string type, string id)
+        {
+            var result = "";
+            int id_ = Convert.ToInt16(id);
+            var check= db.Products.Where(x => x.brand_ID == id_ || x.category_ID == id_).ToList().FirstOrDefault();
+            if (check == null)
+            {
+                db.sp_DeleteCateBrand(true,Convert.ToInt16(type),Convert.ToInt16(id));
+                result = "can dlt";
+            }
+            else {
+                result = "can not dlt";
+            }
+
+
+            return  Json(result , JsonRequestBehavior.AllowGet);
+
+        }
+
+
         public ActionResult AllProducts_()
         {
             if (string.IsNullOrEmpty(Session["UserID"] as string))
@@ -278,8 +298,8 @@ namespace OnlineSuperMartket.Controllers
             else
             {
                 int userID = Convert.ToInt32(Session["UserID"]);
-                ViewBag.brands = db.Brands.Where(x => x.is_active == true).ToList();
-                ViewBag.category = db.Categories.Where(x => x.is_active == true).ToList();
+                ViewBag.brands = db.Brands.Where(x => x.is_active == true && x.isDeleted != true).ToList();
+                ViewBag.category = db.Categories.Where(x => x.is_active == true && x.isDeleted != true).ToList();
                 ViewBag.products = db.Products.Where(x => x.is_active == true).ToList();
                 ViewBag.sp_products = db.sp_ProductsAll(true).ToList();
                 ViewBag.Vendor = db.users.Where(x => x.role_ID == 1).ToList();
