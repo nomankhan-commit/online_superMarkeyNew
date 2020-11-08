@@ -86,7 +86,7 @@ namespace OnlineSuperMartket.Controllers
                 var db_result__ = db.users.Where(x => x.userID == id).ToList();
 
                 db.InActiveVendor(id);
-                string body = "your account has Blocked kindly Contact with Admin  http://localhost:31574/Accounts/login_signup";
+                string body = "your account has Blocked kindly Contact with Admin  http://localhost:31574/My/contactUs";
                 Emai("Your are Approved", db_result__[0].email.ToString(), body);
                 return RedirectToAction("vendorListActive", "controller");
             }
@@ -234,7 +234,7 @@ namespace OnlineSuperMartket.Controllers
                 // Emai(string subject, string reciever, string message)
                 db.InActiveProducts(id);
                 var ddb = db.Products.Where(x => x.Product_ID ==id).ToList();
-                var body = "you Product (product id = "+id+") is inActivated please contact with admin.";
+                var body = "you Product (product id = "+id+ ") is inActivated please contact with admin. http://localhost:31574/My/contactUs";
                 string email = ddb[0].sellorName.ToString();
                 Emai("Product InAtive", email , body);
 

@@ -43,7 +43,20 @@ namespace OnlineSuperMartket.Controllers
 
         public ActionResult home_()
         {
-           
+            //if (string.IsNullOrEmpty(Session["UserID"] as string))
+            //{
+            //    var userRole_ = Session["Role_ID"].ToString() ;
+
+            //    if (userRole_ == "1009")
+            //    {
+            //        return Redirect("~/Accounts/login_signup");
+
+            //    } else if (userRole_ == "1")
+            //    {
+            //        return Redirect("~/Accounts/login_signup");
+            //    }
+                
+            //}
             ViewBag.brands = db.Brands.Where(x => x.is_active == true).ToList();
             ViewBag.category = db.Categories.Where(x => x.is_active == true).ToList();
             ViewBag.products = db.Products.Where(x => x.is_active == true).ToList();
