@@ -25,7 +25,9 @@ namespace OnlineSuperMartket.Controllers
             var rorid = "";
             var db_result = db.users.Where(x => x.email == form_data.email && x.password == form_data.password && x.is_active == true).FirstOrDefault();
 
-            if (db_result != null && db_result.role_ID !=4 )
+            //if (db_result != null && db_result.role_ID != 4 && db_result.role_ID != 1)
+
+              if (db_result != null && db_result.role_ID == 1009 )
             {
                 Session["UserID"] = db_result.userID.ToString();
                 Session["Email"] = db_result.email.ToString();
