@@ -751,40 +751,74 @@ $(document).ready(function(){
             //-----add category ------//
 	        $(".add_cat_brand").click(function (e) {
 	            debugger;
-		    var id= $(this).attr("id");
+
+ 
+	            debugger;
+	            var isEmpty = false;
+	            $("#category_form_modal").find("textarea").each(function () {
+	                debugger;
+	                var vval = $(this).val();
+
+	                if (vval.replace(/^\s+|\s+$/gm,'') == "") {
+	                    //x.replace(/^\s+|\s+$/gm,'');
+	                    $(this).css('border-color', 'red');
+	                    isEmpty = true;
+
+	                } else {
+	                    $(this).css('border-color', 'white');
+
+	                }
+
+	            })
+	            if (!isEmpty) {
+	                debugger;
+	            
+	            var id= $(this).attr("id");
 		   
-		    if (id == "add_Category") {
-		         controller = "Accounts";
-		         method = "addCategory";
-		    }
-		    if (id == "add_Brand") {
-		        controller = "Accounts";
-		        method = "addBrand";
-		    }
+	            if (id == "add_Category") {
+	                controller = "Accounts";
+	                method = "addCategory";
+	            }
+	            if (id == "add_Brand") {
+	                controller = "Accounts";
+	                method = "addBrand";
+	            }
 
-		   // $(id).click(function (e) {
+	            // $(id).click(function (e) {
 
-		    e.preventDefault();
-		    $(".loader_").show();
-		    $.ajax({
-		        url: `/${controller}/${method}`,
-		        dataType: 'json',
-		        type: 'post',
-		        data: $('#category_form_modal').serialize(),
-		        success: function (response) {
-		            debugger;
-		            var controller_result = response;
-		            $(".loader_").hide();
-		        },
+	            e.preventDefault();
+	            $(".loader_").show();
+	            $.ajax({
+	                url: `/${controller}/${method}`,
+	                dataType: 'json',
+	                type: 'post',
+	                data: $('#category_form_modal').serialize(),
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;
+                
 
-		        error: function (error) {
-		            $(".loader_").hide();
-		            alert(`${error}\n Error occurd! check your console for Error.`);
-		            console.log(error)
-		        }
-		    })
-		//});
-        })
+	                    var catbrd = id == "add_Category" ? "category(s)" : "Brand(s)";
+
+
+	                    if (controller_result.length != 2) {
+                            alert(response +"\n  Above '"+catbrd+"' are alreadey created.")
+	                    }
+	                    $(".loader_").hide();
+	                },
+
+	                error: function (error) {
+	                    $(".loader_").hide();
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            })
+	            //});
+
+
+	        }
+
+	        })
 	    //-----add category------//
 
 

@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Configuration;
 using System.Net.Mail;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace OnlineSuperMartket.Controllers
 {
@@ -236,23 +237,36 @@ namespace OnlineSuperMartket.Controllers
                 var Category_name = form_data.category_name;
                 //string fruit = "Apple,Banana,Orange,Strawberry";
                 string[] split = Category_name.Split(',');
-
+                List<string> returnresult = new List<string>();
                 for (int i = 0; i < split.Length; i++)
                 {
+                    var ayyaind = split[i];
+                    var dd = db.Categories.Where(x => x.category_name == ayyaind).FirstOrDefault();
+                    if (dd == null)
+                    {
 
-                    form_data.create_at = DateTime.Now;
-                    form_data.category_disc = "null";
-                    form_data.is_active = true;
-                    form_data.category_name = split[i];
-                    db.Categories.Add(form_data);
-                    db.SaveChanges();
-                    status = true;
-                    Thread.Sleep(250);
+                        form_data.create_at = DateTime.Now;
+                        form_data.category_disc = "null";
+                        form_data.is_active = true;
+                        form_data.category_name = split[i];
+                        db.Categories.Add(form_data);
+                        db.SaveChanges();
+                        status = true;
+                        Thread.Sleep(250);
+
+                    }
+                    else {
+
+                        returnresult.Add(dd.category_name);
+
+                    }
+                       
                 }
 
 
 
-                return Json(status, JsonRequestBehavior.AllowGet);
+                var rr = JsonConvert.SerializeObject(returnresult);
+                return Json(rr, JsonRequestBehavior.AllowGet);
 
             }
 
@@ -267,22 +281,37 @@ namespace OnlineSuperMartket.Controllers
             //string fruit = "Apple,Banana,Orange,Strawberry";
             string[] split = Category_name.Split(',');
 
+
+            List<string> returnresult = new List<string>();
+
             for (int i = 0; i < split.Length; i++)
             {
+                var ayyaind = split[i];
+                var dd = db.Brands.Where(x => x.brand_name == ayyaind).FirstOrDefault();
+                if (dd == null)
+                {
+                    form_data.create_at = DateTime.Now;
+                    form_data.brand_code = 00;
+                    form_data.is_active = true;
+                    form_data.brand_name = split[i];
+                    db.Brands.Add(form_data);
+                    db.SaveChanges();
+                    status = true;
+                    Thread.Sleep(250);
+                }
+                else {
 
-                form_data.create_at = DateTime.Now;
-                form_data.brand_code = 00;
-                form_data.is_active = true;
-                form_data.brand_name = split[i];
-                db.Brands.Add(form_data);
-                db.SaveChanges();
-                status = true;
-                Thread.Sleep(250);
+                    returnresult.Add(dd.brand_name);
+                    
+                }
+
+                
             }
 
 
 
-            return Json(status, JsonRequestBehavior.AllowGet);
+           var rr = JsonConvert.SerializeObject(returnresult);
+            return Json(rr, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

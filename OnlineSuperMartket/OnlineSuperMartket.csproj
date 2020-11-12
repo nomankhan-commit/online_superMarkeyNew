@@ -475,6 +475,7 @@
     <Content Include="Content\js\waypoints.min.js" />
     <Content Include="Content\loaders\25.gif" />
     <Content Include="Content\loaders\802.gif" />
+    <Content Include="Content\mj.jpeg" />
     <Content Include="Content\sdfsdf.jpg" />
     <Content Include="Content\vendroFormContent\css\main.css" />
     <Content Include="Content\vendroFormContent\js\global.js" />
